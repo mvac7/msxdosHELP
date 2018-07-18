@@ -1,0 +1,308 @@
+MSX-DOS 1 HELP
+Version: 1.0
+Date: 03/07/2018
+Author: mvac7/303bcn
+Architecture: MSX
+Format: .COM (MSX-DOS)
+Programming language: C (SDCC)
+WEB: 
+mail: mvac7303b@gmail.com
+
+Doc version: 1.0 
+
+
+History of versions:
+- v1.0 03/07/2018<
+
+
+Document changes:
+- v1.0 (30/07/2018) First version
+
+
+--------------------------------------------------------------------------------
+Index:
+
+1 Introduction
+2 Acknowledgments.
+3 Requirements
+4 How to use
+5 MSX-DOS v1 Guide
+
+
+--------------------------------------------------------------------------------
+1 Introduction:
+
+Application to query the list and operation of MSX-DOS v1 commands.
+
+This project is an Open Source and freeware. You can distribute this software 
+wherever you want, as long as it remains freeware.
+
+Texts based on the MSX2 Technical Handbook and MSX Resource Center Wiki.
+https://www.konamiman.com/msx/msx2th/th-3.txt
+https://www.msx.org/wiki/MSX-DOS_Commands
+
+
+
+--------------------------------------------------------------------------------
+2 Acknowledgments
+  
+  Thanks for Info & help, to:
+
+  Avelino Herrera > http://msx.atlantes.org/index_es.html
+  Nerlaska > http://albertodehoyonebot.blogspot.com.es
+  Fubu > http://www.gamerachan.org/fubu/
+  Marq/Lieves!Tuore > http://www.kameli.net/lt/
+  Sapphire/Z80ST > http://z80st.auic.es/
+  Pentacour > http://pentacour.com/
+  JamQue/TPM > http://www.thepetsmode.com/
+  Andrear > http://andrear.altervista.org/home/msxsoftware.php
+  Konamiman > https://www.konamiman.com
+  MSX Assembly Page > http://map.grauw.nl/resources/msxbios.php
+  Portar MSX Tech Doc > http://nocash.emubase.de/portar.htm
+  MSX Resource Center > http://www.msx.org/
+  Karoshi MSX Community > http://karoshi.auic.es/
+  BlueMSX >> http://www.bluemsx.com/
+  OpenMSX >> http://openmsx.sourceforge.net/
+  Meisei  >> ?
+
+
+
+--------------------------------------------------------------------------------
+3 Requirements:
+
+ * Small Device C Compiler (SDCC) v3.6 
+   http://sdcc.sourceforge.net/
+     
+ * Hex2bin v2.2 
+   http://hex2bin.sourceforge.net/
+
+
+
+--------------------------------------------------------------------------------
+4 How to use
+
+Syntax:
+  HELP [?][LIST|L][<command>]
+  
+  ?         About the application
+  LIST      Displays the list of commands with a short description
+  L         The same as LIST 
+  <command> It shows information about the use of a MSXDOS command
+
+Example:  
+ A>HELP LIST
+ A>HELP DIR
+
+
+
+--------------------------------------------------------------------------------
+5 MSX-DOS v1 Guide
+
+Command list:
+
+ BASIC  Goto MSX-BASIC             
+ COPY   Copies file(s) specified
+ DATE   Displays and sets date
+ DEL    Deletes file(s) 
+ DIR    Lists the files from disk
+ ERASE  The same as DEL
+ FORMAT Initializes or erases a disk
+ MODE   Sets display screen mode
+ PAUSE  Wait for a key to be pressed
+ REM    Comment in a batch file
+ RENAME Change the name of a file
+ REN    The same as RENAME
+ TIME   Displays and sets time
+ TYPE   Prints the contents of a file
+ VERIFY Sets/Resets verify mode
+
+
+--------------------------------------------------------------------------------
+5.1 BASIC
+ Returns to MSX-BASIC environment and can optionally start a BASIC program.
+
+Syntax:
+ BASIC [<file>]
+ 
+Example:
+ A>BASIC DEMO.BAS
+ 
+
+-------------------------------------------------------------------------------- 
+5.2 COPY
+ Copies one or more files.
+
+Syntax:
+ COPY [<file>] [<file>]
+
+Example:
+ A>COPY DEMO.BAS HELLOW.BAS
+ A>COPY A:*.* B:
+
+
+-------------------------------------------------------------------------------- 
+5.3 DATE
+ Displays the date and optionally modifies it.
+
+Syntax:
+ DATE [<date>]
+ 
+Parameter:
+ <date> it can be 3 different formats, depends from the country for which the 
+ computer was released.
+
+ DD/MM/YY Brazil, Egypt, France, Germany & Kuwait
+ MM/DD/YY Argentina, Saudi Arabia, Soviet countries, USA & Spain
+ YY/MM/DD Japan & Korea
+
+Example:
+ A>DATE
+ A>DATE 07.21.18 
+
+
+--------------------------------------------------------------------------------
+5.4 DEL
+ Removes one or more files from disk
+
+Syntax:
+ DEL [<file>]
+
+Example:
+ A>DEL HELLOW.BAS
+ A>DEL B:*.TXT
+
+
+--------------------------------------------------------------------------------
+5.5 DIR
+ Lists the files from disk
+
+Syntax:
+ DIR [Drive:][file][/P][/W]
+
+Parameter:
+ [/P] Pauses after each screenful of information
+ [/W] wide list format, displaying file names in columns
+
+Example:
+ A>DIR /W
+ A>DIR B:*.BAS
+
+
+--------------------------------------------------------------------------------
+5.6 ERASE
+ Removes one or more files from disk
+
+Syntax:
+ ERASE [<file>]
+ 
+Example:
+ A>ERASE HELLOW.BAS
+ A>ERASE B:*.TXT
+ 
+
+--------------------------------------------------------------------------------
+5.7 FORMAT
+ Initializes a diskette in MSX-DOS format
+
+Syntax: 
+ FORMAT
+
+Example:
+ A>FORMAT
+
+
+--------------------------------------------------------------------------------
+5.8 MODE
+ Change the number of columns and the screen mode. 
+
+Syntax:
+ MODE [<columns>]
+ 
+Parameter:
+  1 to 32 > SCREEN 1
+ 33 to 40 > SCREEN 0 40 columns
+ 41 to 80 > SCREEN 0 80 columns
+
+Example:
+ A>MODE 40
+
+
+--------------------------------------------------------------------------------
+5.9 PAUSE
+ Pauses a batch command operation
+
+Syntax:
+ PAUSE
+ 
+
+-------------------------------------------------------------------------------- 
+5.10 REM
+ Write a comment in the batch command
+
+Syntax:
+ REM [<comment>]
+ 
+Example:
+ REM it's a fine day
+  
+  
+--------------------------------------------------------------------------------
+5.11 RENAME
+ Change the name of one or more files 
+
+Syntax:
+ RENAME [<file>] [<file>]
+
+Example:
+ A>RENAME B:AYUDA.EXE HELP1.COM
+ A>RENAME *.SC? *.PIC
+ 
+
+--------------------------------------------------------------------------------
+5.12 REN
+ Change the name of one or more files 
+
+Syntax:
+ REN [<file>] [<file>]
+
+Example:
+ A>REN PHOTO001.PIC IMAGE01.SC2
+ A>REN B:*.BIN *.COM
+ 
+
+-------------------------------------------------------------------------------- 
+5.13 TIME
+ Displays or modifies time
+
+Syntax:
+ TIME [<hour>[:<minute>[:<second>]]][A|P]
+
+Example:
+ A>TIME 22
+ A>TIME 1:16P
+ 
+
+--------------------------------------------------------------------------------
+5.14 TYPE
+ Prints the contents of a file
+
+Syntax:
+ TYPE [<file>]
+ 
+Example:
+ A>TYPE README.TXT
+
+
+--------------------------------------------------------------------------------
+5.15 VERIFY
+ Sets/resets the verify mode.
+ Default is off.
+
+Syntax:
+ VERIFY [ON|OFF]
+
+Example:
+ A>VERIFY ON
+ 
+ 
+--------------------------------------------------------------------------------
